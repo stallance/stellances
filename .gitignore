@@ -17,18 +17,16 @@ stellance/backend/coverage/
 stellance/Contracts/target/
 
 # ─── Environment & secrets ────────────────────────────────────────────────────
-.env
-.env.local
 .env.*.local
 !.env.example
 
 # ─── OS / editor ──────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
-.vscode/
 .idea/
 *.swp
 *.swo
 
 # ─── Prisma generated ─────────────────────────────────────────────────────────
 stellance/backend/src/generated/
+config.bat

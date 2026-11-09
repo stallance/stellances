@@ -6,15 +6,52 @@ Welcome! This guide will help you understand the project architecture and how to
 
 ## 📖 Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Architecture](#architecture)
-3. [Data Models](#data-models)
-4. [User Flows](#user-flows)
-5. [API Design](#api-design)
-6. [Stellar Integration](#stellar-integration)
-7. [Development Setup](#development-setup)
-8. [Picking an Issue](#picking-an-issue)
-9. [Submitting a PR](#submitting-a-pr)
+1. [Your First Contribution — Quick Checklist](#-your-first-contribution--quick-checklist)
+2. [Project Overview](#project-overview)
+3. [Architecture](#architecture)
+4. [Data Models](#data-models)
+5. [User Flows](#user-flows)
+6. [API Design](#api-design)
+7. [Stellar Integration](#stellar-integration)
+8. [Development Setup](#development-setup)
+9. [Picking an Issue](#picking-an-issue)
+10. [Submitting a PR](#submitting-a-pr)
+
+---
+
+## 🚀 Your First Contribution — Quick Checklist
+
+After cloning and running local setup (see [docs/local-development.md](docs/local-development.md)):
+
+### Backend
+```sh
+cd stellance/backend
+npm test                  # run unit tests — all should pass
+npm run lint              # check for lint errors before committing
+```
+
+### Frontend
+```sh
+cd stellance/frontend
+npm test                  # if test suite exists
+npm run lint
+npm run build             # verify no type errors
+```
+
+### Smart contracts
+```sh
+cd stellance/Contracts
+cargo test                # run 30+ tests — all should pass
+cargo clippy              # lint
+cargo build --target wasm32-unknown-unknown --release
+```
+
+### Before opening a PR
+- [ ] All tests pass locally
+- [ ] `cargo clippy` and `npm run lint` produce no errors
+- [ ] No `.env` files committed
+- [ ] PR description explains *why* the change is needed, not just *what* changed
+- [ ] If user-visible changes were made, add an entry under `## Unreleased` in `CHANGELOG.md` following [Keep a Changelog](https://keepachangelog.com/) format
 
 ---
 
